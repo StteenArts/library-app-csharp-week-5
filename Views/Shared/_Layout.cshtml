@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibraryWeb</title>
+    <script type="importmap"></script>
+    <link rel="icon" href="./favicon.png" type="image/png">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/activity_w5_library.styles.css" asp-append-version="true" />
+    <!-- Line to import icons boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body style="background-color: rgba(28, 28, 28, 0.9)">
+
+<!-- Conditional to display navbar menú -->
+@if (@ViewData["page"] == "login")
+{
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+      
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="https://www.shutterstock.com/image-vector/horizontal-banner-vector-illustration-stack-600nw-2560527103.jpg" width="20%" class="img img-fluid" alt="logo libray"/>
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+}
+else
+{
+    <div class="sidebar p-3">
+        <h4 class="mb-4 text-light justify-content-center">
+            <img src="https://www.shutterstock.com/image-vector/horizontal-banner-vector-illustration-stack-600nw-2560527103.jpg" width="120%" height="25%" class="img img-fluid" alt="logo libray"/>
+            <hr class="text-light fw-bold"/>
+        </h4>
+
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Usuarios</a>
+        <a href="#">Libros</a>
+        <a href="#">Configuración</a>
+    </div>
+}
+
+
+<div class="main">
+    <!-- Here must have render body-->
+    <main role="main" class="p-5">
+        @RenderBody()
+    </main>
+    
+    <!-- Validar para mostrar el footer en caso de que no sea admin -->
+    @if (@ViewData["page"] != "login")
+    {
+        <footer class="border-top py-3 mt-5" style="background-color: rgb(15, 23, 42); border-color: rgba(255,255,255,0.05) !important;">
+
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+
+                <!-- Texto -->
+                <small class="text-secondary mb-2 mb-md-0">
+                    © 2026 - Library Web
+                </small>
+
+                <!-- Links -->
+                <div class="d-flex align-items-center gap-3">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy"
+                       class="text-secondary text-decoration-none">
+                        Privacy
+                    </a>
+
+                    <a href="#" class="text-secondary">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="#" class="text-secondary">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </footer>
+    }
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

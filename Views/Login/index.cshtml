@@ -1,0 +1,57 @@
+@{
+    ViewData["page"] = "login";
+    ViewData["Title"] = "Login";
+}
+<!-- LOGIN -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+
+    <div class="card bg-dark text-light border-secondary shadow rounded-4 p-4" style="width: 100%; max-width: 400px;">
+
+        <!-- Title -->
+        <div class="text-center mb-4">
+            <i class="bi bi-person-circle fs-1 text-primary"></i>
+            <h4 class="mt-2">Iniciar Sesión</h4>
+            <small class="text-secondary">Accede a tu cuenta</small>
+        </div>
+
+        <!-- Form -->
+        <form>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input type="email" class="form-control bg-secondary text-light border-0" placeholder="email@ejemplo.com">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control bg-secondary text-light border-0" placeholder="••••••••">
+            </div>
+
+            <!-- Remember -->
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label text-secondary">
+                    Recordarme
+                </label>
+            </div>
+
+            <!-- Button -->
+            <button type="submit" class="btn btn-primary w-100 d-flex justify-content-center align-items-center gap-2">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Ingresar
+            </button>
+
+        </form>
+
+        <!-- Footer -->
+        <div class="text-center mt-3">
+            <small class="text-secondary">
+                ¿No tienes cuenta? <a href="#" class="text-primary text-decoration-none">Regístrate</a>
+            </small>
+        </div>
+
+    </div>
+
+</div>
