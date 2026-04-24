@@ -1,7 +1,20 @@
+using activity_w5_library.DataConfig;
+using activity_w5_library.Service;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<BookServices>();
+
+builder.Services.AddDbContext<MysqlDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("connectionMysql"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("connectionMysql"))
+    )
+);
 
 var app = builder.Build();
 
@@ -22,7 +35,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Login}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 

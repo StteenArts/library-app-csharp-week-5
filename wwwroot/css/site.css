@@ -76,7 +76,7 @@ body {
 
 .stats-card{
   cursor: pointer;
-  transition: transform 0.3s ease, border 0.3s ease;
+  
 }
 
 .stats-card:hover{

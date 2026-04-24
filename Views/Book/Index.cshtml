@@ -1,0 +1,29 @@
+@model IEnumerable<activity_w5_library.Models.Book>
+<!-- Content page books list-->
+
+<h1>Hola desde la lista de libros</h1>
+<table class="table-responsive-md table table-striped">
+    <thead>
+    <tr>
+        <th>Titulo</th>
+        <th>Author</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Author</td>
+                <td>@b.Status</td>
+                <td>
+                    <button class="btn btn-info">Ver</button>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

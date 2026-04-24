@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("activity-w5-library")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b936d92df2048e8719a50d57d4ee248a9a262dc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a668f2f2fb981307a8f875d3d77e85b4e767996d")]
 [assembly: System.Reflection.AssemblyProductAttribute("activity-w5-library")]
 [assembly: System.Reflection.AssemblyTitleAttribute("activity-w5-library")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

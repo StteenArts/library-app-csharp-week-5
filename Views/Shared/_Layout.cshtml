@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link active" href="#"><i class="bi bi-arrow-bar-left me-2 text-info-emphasis"></i>Regresar</a>
                     </li>
                 </ul>
             </div>
@@ -51,53 +51,61 @@ else
             <hr class="text-light fw-bold"/>
         </h4>
 
-        <a href="#" class="active">Dashboard</a>
-        <a href="#">Usuarios</a>
-        <a href="#">Libros</a>
-        <a href="#">Configuración</a>
+        <a href="#" class="active justify-content-center d-flex">Dashboard</a>
+        <a asp-action="Index" asp-controller="Login" class="mt-5 justify-content-center d-flex"><small class="fw-semibold text-danger">Cerrar Sesión<i class="bi bi-door-open-fill ms-3"></i></small></a>
     </div>
+    
 }
 
-
-<div class="main">
-    <!-- Here must have render body-->
+<!-- Here must have render body-->
+@if (ViewData["Title"] == "Login")
+{
     <main role="main" class="p-5">
         @RenderBody()
     </main>
+}
+else
+{
+    <div class="main">
+        <main role="main" class="p-5">
+            @RenderBody()
+        </main>
+    </div>
+}
+
     
-    <!-- Validar para mostrar el footer en caso de que no sea admin -->
-    @if (@ViewData["page"] != "login")
-    {
-        <footer class="border-top py-3 mt-5" style="background-color: rgb(15, 23, 42); border-color: rgba(255,255,255,0.05) !important;">
+<!-- Validar para mostrar el footer en caso de que no sea admin -->
+@if (@ViewData["page"] != "login")
+{
+    <footer class="border-top py-3 mt-5" style="background-color: rgb(15, 23, 42); border-color: rgba(255,255,255,0.05) !important;">
 
-            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
 
-                <!-- Texto -->
-                <small class="text-secondary mb-2 mb-md-0">
-                    © 2026 - Library Web
-                </small>
+            <!-- Texto -->
+            <small class="text-secondary mb-2 mb-md-0">
+                © 2026 - Library Web
+            </small>
 
-                <!-- Links -->
-                <div class="d-flex align-items-center gap-3">
-                    <a asp-area="" asp-controller="Home" asp-action="Privacy"
-                       class="text-secondary text-decoration-none">
-                        Privacy
-                    </a>
+            <!-- Links -->
+            <div class="d-flex align-items-center gap-3">
+                <a asp-area="" asp-controller="Home" asp-action="Privacy"
+                   class="text-secondary text-decoration-none">
+                    Privacy
+                </a>
 
-                    <a href="#" class="text-secondary">
-                        <i class="bi bi-github"></i>
-                    </a>
+                <a href="#" class="text-secondary">
+                    <i class="bi bi-github"></i>
+                </a>
 
-                    <a href="#" class="text-secondary">
-                        <i class="bi bi-envelope"></i>
-                    </a>
-                </div>
-
+                <a href="#" class="text-secondary">
+                    <i class="bi bi-envelope"></i>
+                </a>
             </div>
 
-        </footer>
-    }
-</div>
+        </div>
+    </footer>
+}
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
