@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace activity_w5_library.Service;
 
-public class BookServices : DbContext
+public class BookServices
 {
     private readonly MysqlDbContext _dbContext;
 

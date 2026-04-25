@@ -11,10 +11,5 @@ public class BookController : Controller
     {
         _books = books;
     }
-
-    public IActionResult Index()
-    {
-        var books = _books.GetAllBooks();
-        return View(books.Data);
-    }
+    
 }

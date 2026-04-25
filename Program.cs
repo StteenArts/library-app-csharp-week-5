@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<BookServices>();
+builder.Services.AddScoped<UserServices>();
 
 builder.Services.AddDbContext<MysqlDbContext>(options =>
     options.UseMySql(

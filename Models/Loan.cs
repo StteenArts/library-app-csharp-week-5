@@ -1,6 +1,6 @@
 namespace activity_w5_library.Models;
 
-public class loan
+public class Loan
 {
     public int Id { get; set; }
     public int BookId { get; set; }
